@@ -3,6 +3,7 @@
 import Sidebar from '@/components/Sidebar.vue';
 import TopNav from '@/components/TopNav.vue';
 import axios from 'axios';
+import store from '@/store/index';
 
 export default {
     name: 'IndexColaboradorApp',
@@ -81,7 +82,7 @@ export default {
             axios.put(this.$url + '/cambiar_estado_usuario_admin/' + id, {estado: estado}, {
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': this.$token
+                    'Authorization': this.$store.state.token,
                 }
             }).then((result) => {
                 this.init_data();
@@ -132,7 +133,7 @@ export default {
 
                                         <!-- Title -->
                                         <h1 class="header-title">
-                                            Nuevo colaborador
+                                            Lista de colaboradores
                                         </h1>
 
                                     </div>

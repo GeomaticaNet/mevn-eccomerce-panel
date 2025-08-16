@@ -81,7 +81,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <router-link to="/colaborador/index" class="nav-link">
+                        <router-link to="/colaborador" class="nav-link" active-class="active">
                             <i class="fe fe-user"></i> Colaboradores
                         </router-link>
                     </li>

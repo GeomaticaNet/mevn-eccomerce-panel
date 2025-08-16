@@ -3,6 +3,7 @@
 import Sidebar from '@/components/Sidebar.vue';
 import TopNav from '@/components/TopNav.vue';
 import axios from 'axios';
+import store from '@/store/index';
 
 
 export default {
@@ -55,7 +56,7 @@ export default {
             axios.post(this.$url + '/registro_usuario_admin', this.colaborador, {
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': this.$token
+                    'Authorization': this.$store.state.token,
                 }
             }).then((result) => {
                 console.log(result);
@@ -134,7 +135,7 @@ export default {
                                         <!-- Nav -->
                                         <ul class="nav nav-tabs nav-overflow header-tabs">
                                             <li class="nav-item">
-                                                <router-link to="/colaborador/index" class="nav-link"> Todos los
+                                                <router-link to="/colaborador" class="nav-link"> Todos los
                                                     colaboradores</router-link>
                                             </li>
                                             <li class="nav-item">
